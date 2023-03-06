@@ -1,6 +1,5 @@
 package com.example.web_app.dao;
 
-import com.example.web_app.model.Student;
 import com.example.web_app.model.User;
 import database.DatabaseConfig;
 
@@ -8,8 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginDAO {
     private final String GET_USER_QUERY = "INSERT INTO users(username, password, role) VALUES(?, ?, 'STUDENT')";

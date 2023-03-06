@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Add Student</h1>
-<form action="${pageContext.request.contextPath}/students?action=new" method="post">
+<form action="${pageContext.request.contextPath}/users?action=add" method="post">
   <div>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
@@ -18,8 +18,15 @@
     <input type="password" id="password" name="password" required>
   </div>
   <div>
+    <label>Role:
+    <select name="role">
+      <option value="STUDENT">Student</option>
+      <option value="ADMIN">Admin</option>
+    </select></label>
+  </div>
+  <div>
     <button type="submit">Submit</button>
-    <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/students?action=list'">Cancel</button>
+    <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/users'">Cancel</button>
   </div>
 </form>
 </body>

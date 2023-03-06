@@ -6,4 +6,7 @@
     <listener>
         <listener-class> com.example.web_app.Startup </listener-class>
     </listener>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
 </web-app>

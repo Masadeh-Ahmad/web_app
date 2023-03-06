@@ -1,17 +1,19 @@
-package com.example.web_app.model;
+package com.example.web_app.dto;
 
-import java.io.Serializable;
-
-public class Enrollment implements Serializable {
+public class EnrollmentDTO {
     private int id;
     private int userId;
+    private String username;
     private int courseId;
+    private String courseName;
     private float mark;
 
-    public Enrollment(int id, int studentId, int courseId, float mark) {
+    public EnrollmentDTO(int id, int userId, String username, int courseId, String courseName, float mark) {
         this.id = id;
-        this.userId = studentId;
+        this.userId = userId;
+        this.username = username;
         this.courseId = courseId;
+        this.courseName = courseName;
         this.mark = mark;
     }
 
@@ -31,12 +33,28 @@ public class Enrollment implements Serializable {
         this.userId = userId;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public int getCourseId() {
         return courseId;
     }
 
     public void setCourseId(int courseId) {
         this.courseId = courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public float getMark() {

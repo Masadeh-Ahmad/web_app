@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Add Course</h1>
-<form action="save-course" method="post">
+<form action="${pageContext.request.contextPath}/courses?action=add" method="post">
   <table>
     <tr>
       <td>Course Name:</td>
@@ -16,7 +16,7 @@
     </tr>
     <tr>
       <td>Description:</td>
-      <td><input type="text" name="description"></td>
+      <td><textarea type="" name="description"></textarea></td>
     </tr>
     <tr>
       <td colspan="2"><input type="submit" value="Save"></td>
@@ -24,6 +24,6 @@
   </table>
 </form>
 <br>
-<a href="courses">Back to Courses</a>
+<button onclick="window.location.href='${pageContext.request.contextPath}/courses'">Back to List</button>
 </body>
 </html>

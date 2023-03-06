@@ -1,9 +1,6 @@
 package com.example.web_app.controller;
 
 import com.example.web_app.dao.LoginDAO;
-import com.example.web_app.dao.StudentDAO;
-import com.example.web_app.model.LoginForm;
-import com.example.web_app.model.Student;
 import com.example.web_app.model.User;
 import database.DatabaseConfig;
 import jakarta.servlet.ServletException;
@@ -25,7 +22,7 @@ public class LoginController extends HttpServlet {
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
         else {
-            request.getRequestDispatcher("/views/login.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF//views/login.jsp").forward(request, response);
         }
     }
 
@@ -43,6 +40,6 @@ public class LoginController extends HttpServlet {
         } else {
             request.setAttribute("error", "Invalid username or password");
         }
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/home");
     }
 }

@@ -5,12 +5,17 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<% boolean isLogged = request.getSession().getAttribute("role") != null; %>
 <h1>index
 </h1>
-<% if(isLogged)  {%> Hello ${pageContext.request.getSession(false).getAttribute("username")}
+<% if( session.getAttribute("role") != null)  {%> Hello <% session.getAttribute("username"); %>             <a href=${pageContext.request.contextPath}/logout>Logout</a>
 <br/>
-<a href=${pageContext.request.contextPath}/logout>Logout</a>
+<br/>
+<br/>
+
+<div style="align-content: center"><a href=${pageContext.request.contextPath}/users>Users</a>
+    <a href=${pageContext.request.contextPath}/courses>Courses</a>
+    <a href=${pageContext.request.contextPath}/enrollment>Enrollments</a></div>
+
 <%} else {%>
 <a href=${pageContext.request.contextPath}/login>Login</a>
 <%}%>
